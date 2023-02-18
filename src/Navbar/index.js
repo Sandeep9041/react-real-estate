@@ -37,7 +37,7 @@ class NavBar extends Component {
                 <p className="home-logo-name">Estatery</p>
               </div>
               <Nav className="o">
-                <Link to="/" className="link-style">
+                <Link to="/" className="link-style active">
                   Rent
                 </Link>
                 <Link className="link-style">Buy</Link>

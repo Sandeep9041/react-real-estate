@@ -8,9 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Rent />} />
-      </Routes>
+      <div className="bg">
+        <Routes>
+          <Route path="/" element={<Rent />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

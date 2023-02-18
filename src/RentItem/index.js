@@ -83,6 +83,9 @@ const RentItem = (props) => {
         </div>
         <p className="location">{location}</p>
         <p className="address">{address}</p>
+        <div className="date-container">
+          <p className="bed-bathroom-area">Available from: {availableFrom}</p>
+        </div>
         <div className="bedroom-bathroom-container">
           {bedroomValue()}
           {bathroomValue()}
@@ -97,9 +100,6 @@ const RentItem = (props) => {
               <sup>2</sup>
             </p>
           </div>
-        </div>
-        <div className="date-container">
-          <p className="bed-bathroom-area">Available from: {availableFrom}</p>
         </div>
       </div>
     </li>

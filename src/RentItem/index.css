@@ -67,7 +67,6 @@ span {
 }
 .bedroom-bathroom-container {
   display: flex;
-  margin-top: 11px;
 }
 .area-container {
   display: flex;
@@ -78,6 +77,7 @@ span {
   color: #000;
   font-weight: 500;
   opacity: 0.7;
+  margin-bottom: 5px;
 }
 .location {
   margin-top: 5px;
@@ -94,5 +94,5 @@ span {
 }
 .date-container {
   display: flex;
-  margin-top: 11px;
+  margin-bottom: 0px;
 }

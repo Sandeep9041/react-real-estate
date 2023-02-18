@@ -41,7 +41,7 @@ const list = [
     address: "4377 Ethels Lane,Florida",
     bedroom: 5,
     bathroom: 6,
-    area: "2x5m",
+    area: "12x15m",
     price: "9,700",
     isFavorite: false,
     type: "house",
@@ -284,16 +284,136 @@ const list = [
     type: "plot",
     availableFrom: "09/07/2023",
   },
+
+  {
+    id: 24,
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2016/11/18/17/46/house-1836070_960_720.jpg",
+    location: "Blue Mountain",
+    address: "1746 Rafe Lane,New York",
+    area: "8x7m",
+    bedroom: 2,
+    bathroom: 2,
+    price: "2,000",
+    isFavorite: false,
+    type: "house",
+    availableFrom: "11/04/2022",
+  },
+  {
+    id: 25,
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187__340.jpg",
+    location: "Largo",
+    address: "10801 Starkey Rd #105,California",
+    area: "13x6m",
+    price: "12,500",
+    isFavorite: false,
+    bedroom: 4,
+    bathroom: 6,
+    type: "commercial",
+    availableFrom: "07/17/2021",
+  },
+  {
+    id: 26,
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2014/07/10/17/18/large-home-389271_960_720.jpg",
+    location: "South Fallsburg",
+    address: "Po Box 422,New York",
+    area: "17x15m",
+    price: "15,000",
+    isFavorite: false,
+    bedroom: 7,
+    bathroom: 9,
+    type: "house",
+    availableFrom: "08/21/2024",
+  },
+  {
+    id: 27,
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2015/08/25/14/16/small-wooden-house-906912_960_720.jpg",
+    location: "Daly City",
+    address: " 15 Oakridge Dr Road,California",
+    area: "5x7m",
+    price: "700",
+    isFavorite: false,
+    bedroom: 1,
+    bathroom: 1,
+    type: "house",
+    availableFrom: "01/06/2023",
+  },
+  {
+    id: 28,
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2017/11/16/19/29/cottage-2955582__340.jpg",
+    location: "Millwood",
+    address: "750 Sun Valley Road,Washington",
+    area: "9x7m",
+    price: "2,500",
+    isFavorite: false,
+    bedroom: 2,
+    bathroom: 2,
+    type: "house",
+    availableFrom: "12/31/2019",
+  },
+  {
+    id: 29,
+    imageUrl:
+      "https://img.freepik.com/free-photo/beautiful-landscape-with-clear-sky_23-2149721820.jpg?w=1060&t=st=1676739335~exp=1676739935~hmac=4c8e4f1699e6ce6f6bf4275b3a456e9e0913875cc73347dc9c0d2c910d7b7de2",
+    location: "Branson",
+    address: "4458 Lighthouse Drive,Missouri",
+    area: "3x7m",
+    price: "900",
+    isFavorite: false,
+    type: "plot",
+    availableFrom: "01/01/2023",
+  },
+  {
+    id: 30,
+    imageUrl:
+      "https://img.freepik.com/premium-photo/land-plot-building-house-aerial-view-land-field-with-pins-pin-location-housing-subdivision-residential-development-owned-sale-rent-buy-investment-home-house-expand-city-suburb_73523-7855.jpg?w=900",
+    location: "Frostproof",
+    address: "4377 Ethels Lane,Florida",
+    area: "4x5m",
+    price: "1,700",
+    isFavorite: false,
+    type: "plot",
+    availableFrom: "12/21/2022",
+  },
+  {
+    id: 31,
+    imageUrl:
+      "https://img.freepik.com/free-photo/aerial-view-various-sizes-green-fields_1268-15590.jpg?w=1060&t=st=1676739583~exp=1676740183~hmac=47488bf14324bdd7ff80eecf65eeff81396a9487df3c892cc9d0fb1ef011f59b",
+    location: "Northbrook",
+    address: " 1563 Walkers Ridge Way,Illinois",
+    area: "5x7m",
+    price: "2,700",
+    isFavorite: false,
+    type: "plot",
+    availableFrom: "11/02/2023",
+  },
+  {
+    id: 32,
+    imageUrl:
+      "https://img.freepik.com/free-photo/modern-country-houses-construction_1385-14.jpg?w=900&t=st=1676739654~exp=1676740254~hmac=b085ebb91cbc4daa8dde220f6c3e88118fcf12734d95074355adee5f5c2d95a6",
+    location: "New York",
+    address: "1467 Hanover Street,New York",
+    area: "8x7m",
+    price: "5,000",
+    isFavorite: false,
+    type: "plot",
+    availableFrom: "08/02/2023",
+  },
 ];
 
 class Rent extends Component {
   state = {
     type: "all",
-    price1: 500,
-    price2: 2500,
+    price1: "all",
+    price2: "all",
     locationNew: "",
     dateInput: "",
     filteredList: list,
+    searchInput: "",
   };
 
   isFavoriteId = (id) => {
@@ -316,12 +436,16 @@ class Rent extends Component {
   };
 
   getSearchInput = (event) => {
-    const { filteredList } = this.state;
-    this.setState({
-      filteredList: filteredList.filter((each) =>
-        each.address.toLowerCase().includes(event.target.value.toLowerCase())
-      ),
-    });
+    const { searchInput } = this.state;
+    this.setState({ searchInput: event.target.value });
+  };
+
+  getSearchedInput = () => {
+    const { filteredList, searchInput } = this.state;
+    const searchedList = filteredList.filter((each) =>
+      each.address.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    return searchedList;
   };
 
   getDate = (event) => {
@@ -329,21 +453,8 @@ class Rent extends Component {
     const date1 = parseISO(event.target.value);
     const formatedDate = format(date1, "MM/dd/yyyy");
     this.setState({ dateInput: formatedDate });
-    //   console.log(formatedDate1);
-    // const dateFilteredList = list.filter((each) => {
-    //   const data1 = new Date(each.availableFrom);
-    //   const formatedDate = data1.toLocaleDateString();
-    // const fD = format(data1, "dd/MM/yyyy");
-    //   if (formatedDate < formatedDate1) {
-    //     return formatedDate;
-    //   }
-    //   return "";
-    // });
-    // console.log(dateFilteredList);
-    //   this.setState({ filteredList: dateFilteredList });
   };
   getPrice = (event) => {
-    // const n = list[0].price.replace(",", "");
     if (event.target.value === "all") {
       this.setState({ price1: "all" });
     } else {
@@ -383,10 +494,8 @@ class Rent extends Component {
 
     const filterDate = (each) => {
       const data1 = new Date(each.availableFrom);
-      // const formatedDate1 = data1.toLocaleDateString();
       const formatedDate2 = format(data1, "dd/MM/yyyy");
-      // console.log(formatedDate2);
-      return formatedDate2 < dateInput;
+      return formatedDate2 > dateInput;
     };
 
     const newList = newList1
@@ -405,8 +514,9 @@ class Rent extends Component {
   };
 
   render() {
-    const { filteredList, locationNew, dateInput } = this.state;
-    console.log(dateInput);
+    const { filteredList, locationNew, dateInput, searchInput } = this.state;
+    const searchedList = this.getSearchedInput();
+    console.log(searchedList);
     return (
       <div className="rent-background">
         <div className="rent-items-container">
@@ -418,6 +528,7 @@ class Rent extends Component {
                 className="search-input"
                 placeholder="Search With Search Bar"
                 onChange={this.getSearchInput}
+                value={searchInput}
               />
               <button type="button" className="search-dropdown-btn">
                 <img
@@ -486,7 +597,7 @@ class Rent extends Component {
 
           <div className="rent-data-container">
             <ul>
-              {filteredList.map((each) => (
+              {searchedList.map((each) => (
                 <RentItem rentItem={each} isFavoriteId={this.isFavoriteId} />
               ))}
             </ul>
