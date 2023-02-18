@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.background-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  /* padding: 15px; */
+}
+.home-logo {
+  display: flex;
+  flex-direction: row;
+  margin-top: 13px;
+}
+.logo-image {
+  width: 29px;
+  height: 25px;
+  margin-right: 3px;
+}
+.home-logo-name {
+  font-weight: 600;
+  text-align: center;
+  font-size: 17px;
+}
+#nav-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Microsoft Sans Serif";
+  padding-left: 13px;
+  padding-right: 17px;
+  margin-top: 5px;
+  box-shadow: 0px 1px 0px #e1e4e8;
+}
+.nav-bar-item {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .nav-bar {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.nav-bar-items {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .nav-bar-items {
+    flex-direction: column;
+  }
+}
+@media (max-width: 997px) and (min-width: 767px) {
+  .nav-bar-items {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .nav-bar-item {
+    width: 25%;
+  }
+}
+@media (max-width: 997px) and (min-width: 767px) {
+  .nav-bar-item {
+    width: 55%;
+  }
+}
+.login-button {
+  background-color: transparent;
+  color: #7950f2;
+  border: 1px solid #d5d7db;
+}
+.signup-button {
+  background-color: #7950f2;
+  color: #ffffff;
+  border: 0px;
+}
+.button2 {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  margin-right: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  font-family: "Microsoft Sans Serif";
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+.link:active {
+  color: #7950f2;
+  background-color: #ebe9f1;
+  height: 37px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 600;
+  font-family: "Microsoft Sans Serif";
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.o {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.link-style {
+  text-decoration: none;
+  color: #000;
+}

@@ -1,0 +1,98 @@
+li {
+  list-style: none;
+  width: 29%;
+  margin: 15px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Microsoft Sans Serif";
+}
+@media (max-width: 767px) {
+  li {
+    width: 100%;
+  }
+}
+@media (max-width: 997px) and (min-width: 767px) {
+  li {
+    width: 45%;
+  }
+}
+.bed {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.image {
+  width: 100%;
+  height: 195px;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+}
+.heart-button {
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #d5d7db;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heart {
+  width: 19px;
+}
+.rent-item-details {
+  width: 90%;
+}
+.price-isFavourite-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+span {
+  opacity: 0.5;
+  font-family: "Microsoft Sans Serif";
+  font-size: 15px;
+  color: #000;
+  font-weight: 500;
+}
+
+.price {
+  color: #7950f2;
+  font-size: 23px;
+}
+.bathroom-container {
+  display: flex;
+  margin-right: 11px;
+}
+.bedroom-bathroom-container {
+  display: flex;
+  margin-top: 11px;
+}
+.area-container {
+  display: flex;
+}
+.address {
+  font-family: "Microsoft Sans Serif";
+  font-size: 13px;
+  color: #000;
+  font-weight: 500;
+  opacity: 0.7;
+}
+.location {
+  margin-top: 5px;
+  margin-bottom: 11px;
+  font-size: 21px;
+  font-weight: 600;
+}
+.bed-bathroom-area {
+  font-family: "Microsoft Sans Serif";
+  font-size: 11px;
+  color: #000;
+  font-weight: 500;
+  opacity: 0.7;
+}
+.date-container {
+  display: flex;
+  margin-top: 11px;
+}
